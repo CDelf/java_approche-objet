@@ -6,27 +6,13 @@ public class TestPersonne {
 
     public static void main(String[] args) {
         // 1ère instance de Personne
-        AdressePostale ap1 = new AdressePostale();
-        ap1.numeroRue =12;
-        ap1.libelleRue = "Rue de Paris";
-        ap1.codePostal = 75001;
-        ap1.ville = "Paris";
+        AdressePostale ap1 = new AdressePostale(12, "Rue de Paris", 75001, "Paris");
 
-        Personne p1 = new Personne();
-        p1.nom = "Dupont";
-        p1.prenom = "Jean";
-        p1.adresse = ap1;
+        Personne p1 = new Personne("Dupont", "Jean", ap1);
 
         // 2ème instance de personne
-        AdressePostale ap2 = new AdressePostale();
-        ap2.numeroRue = 45;
-        ap2.libelleRue = "Avenue des Champs";
-        ap2.codePostal = 75008;
-        ap2.ville= "Paris";
+        AdressePostale ap2 = new AdressePostale(45, "Avenue des Champs", 75008, "Paris");
 
-        Personne p2 = new Personne();
-        p2.nom = "Martin";
-        p2.prenom = "Sophie";
-        p2.adresse = ap2;
+        Personne p2 = new Personne("Martin", "Sophie", ap2);
     }
 }
