@@ -1,4 +1,4 @@
-package encapsulation;
+package encapsulation.heritage;
 
 public class Compte {
     private int numCompte;
@@ -27,7 +27,7 @@ public class Compte {
     @Override
     public String toString() {
         return "Compte : " +
-                "numCompte = " + numCompte +
-                ", soldeCompte = " + soldeCompte;
+                "Numéro de compte = " + numCompte +
+                ", Solde du Compte = " + soldeCompte;
     }
 }
