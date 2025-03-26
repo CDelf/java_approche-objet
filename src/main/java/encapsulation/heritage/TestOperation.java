@@ -10,13 +10,10 @@ public class TestOperation {
         Debit d2 = new Debit("20/03/2025", 599.9);
         Operation[] operations = {c1, d1, c2, d2};
 
-        // Afficher les opérations
-        for(Operation op : operations) {
-            System.out.println(op);
-        }
-        // Calculer le montant restant après ces opérations
+        // Afficher les opérations et calculer le solde
         double result = 0;
         for(Operation op : operations) {
+            System.out.println(op);
             result += op.calculateAmount();
         }
         System.out.println("-----------------------------------------");
