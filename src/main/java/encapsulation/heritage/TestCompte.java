@@ -10,7 +10,7 @@ public class TestCompte {
         Compte[] comptes = {c1, c2};
         // Affichage des informations de ces 2 comptes
         for(Compte c : comptes) {
-            System.out.println(c.toString());
+            System.out.println(c);
         }
     }
 }
