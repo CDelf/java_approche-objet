@@ -23,4 +23,11 @@ public class Compte {
     public void setSoldeCompte(double soldeCompte) {
         this.soldeCompte = soldeCompte;
     }
+    // Redéfinition de la méthode toString
+    @Override
+    public String toString() {
+        return "Compte : " +
+                "numCompte = " + numCompte +
+                ", soldeCompte = " + soldeCompte;
+    }
 }

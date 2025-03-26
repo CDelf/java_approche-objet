@@ -9,5 +9,6 @@ public class TestCompte {
         c.setSoldeCompte(499);
         System.out.println(c.getNumCompte());
         System.out.println( c.getSoldeCompte());
+        System.out.println(c.toString());
     }
 }
