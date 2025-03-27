@@ -35,6 +35,6 @@ public class Theatre {
         return "Theatre " + nom +
                 ": capaciteMax : " + capaciteMax +
                 ", nbInscrits : " + nbInscrits +
-                ", recette : " + recette;
+                ", recette : " + recette + "€";
     }
 }
