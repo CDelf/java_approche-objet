@@ -1,6 +1,6 @@
 package fichier;
 
-public class Ville {
+public class Ville implements Comparable<Ville> {
 
     private String nom;
     private String codeDpt;
@@ -13,6 +13,12 @@ public class Ville {
         this.codeDpt = codeDpt;
         this.region = region;
         this.population = population;
+    }
+
+    // Ordre décroissant
+    @Override
+    public  int compareTo(Ville autre){
+        return Integer.compare(autre.getPopulation(), this.population);
     }
 
     @Override

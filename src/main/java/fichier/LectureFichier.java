@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class LectureFichier {
@@ -56,6 +57,8 @@ public class LectureFichier {
         Path outputPath = Paths.get(FILE_PATH_OUT);
 
         try {
+            // Trié selon nb habitant décroissant
+            Collections.sort(gdesVillesList);
             List<String> lignesFichier = new ArrayList<>();
             // Ajouter l'en-tête
             lignesFichier.add("Nom;Code Département;Nom Région;Population");
