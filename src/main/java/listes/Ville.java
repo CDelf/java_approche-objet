@@ -1,5 +1,7 @@
 package listes;
 
+import fr.diginamic.testenumeration.Continent;
+
 import java.text.Collator;
 import java.util.Locale;
 
@@ -7,15 +9,28 @@ public class Ville implements Comparable<Ville> {
 
     private String nom;
     private int nbHabitants;
+    private Continent continent;
+
 
     public Ville(String nom, int nbHabitants) {
         this.nom = nom;
         this.nbHabitants = nbHabitants;
     }
 
+    public Ville(String nom, int nbHabitants, Continent continent) {
+        this.nom = nom;
+        this.nbHabitants = nbHabitants;
+        this.continent = continent;
+    }
+
     @Override
     public String toString() {
-        return nom + ", Nombre d'habitants : " + nbHabitants;
+        final StringBuilder sb = new StringBuilder("Ville {");
+        sb.append("nom='").append(nom).append('\'');
+        sb.append(", nbHabitants=").append(nbHabitants);
+        sb.append(", continent=").append(continent);
+        sb.append('}');
+        return sb.toString();
     }
 
     // Tri exercice 1 : alphabétique par nom de ville
@@ -41,5 +56,9 @@ public class Ville implements Comparable<Ville> {
 
     public int getNbHabitants() {
         return nbHabitants;
+    }
+
+    public Continent getContinent() {
+        return continent;
     }
 }
