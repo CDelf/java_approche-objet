@@ -37,6 +37,14 @@ public class Potion {
         return type;
     }
 
+    public int getEffet() {
+        return effet;
+    }
+
+    public int getDuree() {
+        return duree;
+    }
+
     @Override
     public String toString() {
         return "Potion de " + type + " : effet " + effet + " pendant " + duree + " combat(s)";
