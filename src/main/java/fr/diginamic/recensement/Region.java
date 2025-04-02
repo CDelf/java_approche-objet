@@ -19,23 +19,6 @@ public class Region implements Comparable<Region> {
         return Integer.compare(autre.getPopulation(), this.population); // Décroissant
     }
 
-    // Récupérer la liste des villes à partir du nom de région entré par l'utilisateur
-    public static List<Ville> obtenirVillesRegion(Recensement recensement, Scanner scanner) {
-        System.out.print("Entrez le nom de la région : ");
-        scanner.nextLine(); // Absorbe le retour à la ligne si besoin
-        String nomRegion = scanner.nextLine().trim();
-
-        // Récupération des villes de la région
-        List<Ville> villesRegion = recensement.rechercherVillesParRegion(nomRegion);
-
-        // Vérification si la région existe
-        if (villesRegion.isEmpty()) {
-            System.out.println("Région " + nomRegion + " non trouvée. Vérifiez l’orthographe et réessayez.");
-            return null;
-        }
-        return villesRegion;
-    }
-
     public String getNomRegion() {
         return nomRegion;
     }

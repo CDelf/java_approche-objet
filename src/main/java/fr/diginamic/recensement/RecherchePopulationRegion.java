@@ -8,7 +8,7 @@ public class RecherchePopulationRegion extends MenuService {
     @Override
     public void traiter(Recensement recensement, Scanner scanner) {
         // Récupérer la liste des villes à partir du nom de région entré par l'utilisateur
-        List<Ville> villesRegion = Region.obtenirVillesRegion(recensement, scanner);
+        List<Ville> villesRegion = Recensement.obtenirVillesRegion(recensement, scanner);
         if(villesRegion != null) {
             // Calcul de la population totale
             int populationTotale = 0;

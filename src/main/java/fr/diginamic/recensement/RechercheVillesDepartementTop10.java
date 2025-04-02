@@ -9,7 +9,7 @@ public class RechercheVillesDepartementTop10 extends MenuService {
     @Override
     public void traiter(Recensement recensement, Scanner scanner) {
         // Retourne une liste de villes à partir du codeDpt entré par l'utilisateur
-        List<Ville> villesDuDpt = Departement.obtenirVillesDuCodeDpt(recensement, scanner);
+        List<Ville> villesDuDpt = Recensement.obtenirVillesDuCodeDpt(recensement, scanner);
         if(villesDuDpt != null) {
             // tri
             Collections.sort(villesDuDpt);

@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Recensement {
 
@@ -45,6 +46,45 @@ public class Recensement {
             if (ville.getNomRegion().equalsIgnoreCase(nomRegion)) {
                 villesRegion.add(ville);
             }
+        }
+        return villesRegion;
+    }
+
+    // Récupère le code département entré par l'utilisateur, retourne les villes si existantes
+    public static List<Ville> obtenirVillesDuCodeDpt(Recensement recensement, Scanner scanner) {
+        System.out.print("Entrez le code du département (ex: 75, 13, 69) : ");
+        scanner.nextLine(); // Absorbe le retour à la ligne si besoin
+        String codeDpt = scanner.nextLine().trim();
+
+        // Pour les codes < 10, ajout d'un 0 devant si nécessaire
+        if (codeDpt.length() == 1) {
+            codeDpt = "0" + codeDpt;
+        }
+        // Récupération des villes du département
+        List<Ville> villesDuDpt = recensement.rechercherVillesParDepartement(codeDpt);
+
+        // Vérification si le département existe
+        if (villesDuDpt.isEmpty()) {
+            System.out.println("Aucune ville trouvée pour le département " + codeDpt + ". Vérifiez le code et réessayez.");
+            return null;
+        }
+        // S'il existe, retourne la liste des villes du département
+        return villesDuDpt;
+    }
+
+    // Récupérer la liste des villes à partir du nom de région entré par l'utilisateur
+    public static List<Ville> obtenirVillesRegion(Recensement recensement, Scanner scanner) {
+        System.out.print("Entrez le nom de la région : ");
+        scanner.nextLine(); // Absorbe le retour à la ligne si besoin
+        String nomRegion = scanner.nextLine().trim();
+
+        // Récupération des villes de la région
+        List<Ville> villesRegion = recensement.rechercherVillesParRegion(nomRegion);
+
+        // Vérification si la région existe
+        if (villesRegion.isEmpty()) {
+            System.out.println("Région " + nomRegion + " non trouvée. Vérifiez l’orthographe et réessayez.");
+            return null;
         }
         return villesRegion;
     }
