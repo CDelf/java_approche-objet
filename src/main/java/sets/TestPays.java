@@ -50,5 +50,9 @@ public class TestPays {
         // Supprimer le pays avec le pib total le plus grand
         pays.remove(paysRiche);
         System.out.println("Set sans le pays ayant le pib le plus élevé (" + paysRiche.getNom() + ") :" + pays);
+
+        // Vérifier que le nombre d'habitants ne peut pas être négatif @Rule
+        Pays paysIvente = new Pays("Nom", -100, 190);
+        System.out.println("Pays inventé : " + paysIvente);
     }
 }
